@@ -1,0 +1,21 @@
+{
+    "name": "ahmet/todo-app",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ahmet Helvacı",
+            "email": "ahmethelv@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "TodoApp\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
