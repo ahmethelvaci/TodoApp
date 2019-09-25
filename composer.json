@@ -13,7 +13,10 @@
     "autoload": {
         "psr-4": {
             "TodoApp\\": "src/"
-        }
+        },
+        "files": [
+            "src/helper.php"
+        ]
     },
     "config": {
         "optimize-autoloader": true

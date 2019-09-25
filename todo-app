@@ -6,9 +6,6 @@ use TodoApp\Application;
 
 require "vendor/autoload.php";
 
-// TODO find good way for helpers
-require "src/helper.php";
-
 $app = Application::init();
 for ($i=0; $i < 100; $i++) { 
     $app->addTodo("sdfsdf$i");
@@ -22,26 +19,4 @@ for ($i=0; $i < 50; $i++) {
     $app->removeTodo(100-$i);
 }
 
-echo "------------\n";
-
-$app->removeTodo(0);
-
-foreach ($app->todoList() as $value) {
-    echo $value->name() . "\n";
-}
-
-echo "------------\n";
-$app->removeTodo(0);
-
-foreach ($app->todoList() as $value) {
-    echo $value->name() . "\n";
-}
-echo "------------\n";
-
-$app->removeTodo(0);
-
-foreach ($app->todoList() as $value) {
-    echo $value->name() . "\n";
-}
-
-echo "------------\n";
+dd($app->todoList());
