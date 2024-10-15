@@ -1,11 +1,12 @@
 <?php
 
-namespace TodoApp\Business\Todo;
+namespace TodoApp\Command;
 
 use Exception;
 use TodoApp\Application;
+use TodoApp\Interface\Command;
 
-class RemoveTodo
+class RemoveTodoCommand implements Command
 {
     public function handle($arg)
     {

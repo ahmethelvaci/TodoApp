@@ -1,12 +1,13 @@
 <?php
 
-namespace TodoApp\Business\Todo;
+namespace TodoApp\Command;
 
 use Exception;
 use TodoApp\Application;
 use TodoApp\Entity\Todo;
+use TodoApp\Interface\Command;
 
-class AddTodo
+class AddTodoCommand implements Command
 {
     public function handle($arg)
     {

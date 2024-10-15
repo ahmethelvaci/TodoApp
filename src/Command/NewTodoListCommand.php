@@ -1,11 +1,12 @@
 <?php
 
-namespace TodoApp\Business\TodoList;
+namespace TodoApp\Command;
 
 use TodoApp\Application;
 use TodoApp\Entity\TodoList;
+use TodoApp\Interface\Command;
 
-class NewTodoList
+class NewTodoListCommand implements Command
 {
 
     public function handle()

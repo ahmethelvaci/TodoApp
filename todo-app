@@ -7,16 +7,5 @@ use TodoApp\Application;
 require "vendor/autoload.php";
 
 $app = Application::init();
-for ($i=0; $i < 100; $i++) { 
-    $app->addTodo("sdfsdf$i");
-}
-
-foreach ($app->todoList() as $value) {
-    echo $value->name() . "\n";
-}
-
-for ($i=0; $i < 50; $i++) { 
-    $app->removeTodo(100-$i);
-}
-
+$app->addTodo("sdfsdf");
 dd($app->todoList());

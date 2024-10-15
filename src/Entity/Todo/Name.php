@@ -2,7 +2,9 @@
 
 namespace TodoApp\Entity\Todo;
 
-class Name 
+use TodoApp\Interface\Entity;
+
+class Name implements Entity
 {
     private $name;
 

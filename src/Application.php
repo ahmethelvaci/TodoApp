@@ -2,20 +2,17 @@
 
 namespace TodoApp;
 
-use TodoApp\Business\Start;
+use TodoApp\Start;
+use TodoApp\Interface\Application as InterfaceApplication;
 
-class Application
+class Application implements InterfaceApplication
 {
-    private static $application;
-    private $app;
-    private $cmd;
+    private static Application|null $application = null;
+    private array $app = [];
+    private array $cmd = [];
 
-    public function __construct()
-    {
-        $this->app = [];
-        $this->cmd = [];
-        $this->setCmd('start', new Start);
-    }
+    private function __construct()
+    {}
 
     public static function init()
     {
@@ -27,12 +24,18 @@ class Application
         return self::$application;
     }
 
-    public function set($name, $obj)
+    private function start()
+    {
+        Start::addCommands($this);
+        $this->new();
+    }
+
+    public function set($name, $obj): void
     {
         $this->app[$name] = $obj;
     }
 
-    public function setCmd($name, $obj)
+    public function setCmd($name, $obj): void
     {
         if (!isset($this->cmd[$name])) {
             $this->cmd[$name] = $obj;
@@ -40,12 +43,12 @@ class Application
         // @TODO handle not exist
     }
 
-    public function has($name)
+    public function has($name): bool
     {
         return isset($this->app[$name]);
     }
 
-    public function hasCmd($name)
+    public function hasCmd($name): bool
     {
         return isset($this->cmd [$name]);
     }

@@ -3,8 +3,9 @@
 namespace TodoApp\Entity;
 
 use Iterator;
+use TodoApp\Interface\Entity;
 
-class TodoList implements Iterator
+class TodoList implements Entity, Iterator
 {
     private $position = 0;
     private $todos;
